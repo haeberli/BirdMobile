@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bird", "Bird\Bird.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Downloader", "Downloader\Downloader.csproj", "{03442ED4-C296-4783-81B9-67C3F298543C}"
 EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "BirdMobileAzure", "BirdMobileAzure\BirdMobileAzure.ccproj", "{7534CB3C-F3CC-4015-9652-6CBAE401B6FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{03442ED4-C296-4783-81B9-67C3F298543C}.Release|Mixed Platforms.Build.0 = Release|x86
 		{03442ED4-C296-4783-81B9-67C3F298543C}.Release|x86.ActiveCfg = Release|x86
 		{03442ED4-C296-4783-81B9-67C3F298543C}.Release|x86.Build.0 = Release|x86
+		{7534CB3C-F3CC-4015-9652-6CBAE401B6FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7534CB3C-F3CC-4015-9652-6CBAE401B6FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7534CB3C-F3CC-4015-9652-6CBAE401B6FD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7534CB3C-F3CC-4015-9652-6CBAE401B6FD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7534CB3C-F3CC-4015-9652-6CBAE401B6FD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7534CB3C-F3CC-4015-9652-6CBAE401B6FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7534CB3C-F3CC-4015-9652-6CBAE401B6FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7534CB3C-F3CC-4015-9652-6CBAE401B6FD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7534CB3C-F3CC-4015-9652-6CBAE401B6FD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7534CB3C-F3CC-4015-9652-6CBAE401B6FD}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

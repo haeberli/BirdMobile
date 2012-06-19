@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page %>
+
+<!DOCTYPE html>
 <html>
 <head runat="server">
     <title>Vögel</title>
@@ -48,7 +50,7 @@ function showVoegel(urlObj, options)
     for (var i = 0; i < items.length; i++)
     {
         var item = items[i];
-        markup += "<li><a href='#vogel?name=" + item.Name + "'>" + item.Name + "</a></li>";
+        markup += "<li><a href='#vogel?name=" + item.Name + "' data-transition='slide'>" + item.Name + "</a></li>";
     }
     markup += "</ul>";
 
@@ -72,17 +74,19 @@ function showVogel(urlObj, options)
     var name = urlObj.hash.match(/[?|&]name=(.+?)(&|$)/);
 
     var item = Voegel.filter(function (el) { return el.Name == name[1]; })[0];
-
+    
     var $page = $("#vogel");
 
-    var $content = $page.children(":jqmData(role=content)");    
-    $content.find('h3[id="detailName"').html(item.Name);
-    $content.find('img[id="detailBild"').attr("src", "Assets/" + item.Bilder[0].Source);
-    $content.find('td[id="detailGruppe"').html(item.Gruppe);
-    $content.find('td[id="detailLebensraum"').html(item.Lebensraum);
-    $content.find('td[id="detailLaenge"').html(item.Laenge);
+    var $header = $page.children(":jqmData(role=header)");
+    $header.find("h1").html(item.Name);
 
-    $page.page();
+    var $content = $page.children(":jqmData(role=content)");    
+    $content.find('img[id="detailBild"]').attr("src", "Assets/" + item.Bilder[0].Source);
+    $content.find('div[id="detailGruppe"]').html(item.Gruppe);
+    $content.find('div[id="detailLebensraum"]').html(item.Lebensraum);
+    $content.find('div[id="detailLaenge"]').html(item.Laenge);
+
+    $page.page();    
 
     options.dataUrl = urlObj.href;
     $.mobile.changePage($page, options);
@@ -117,7 +121,7 @@ $(document).ready(function()
     for (var i = 0; i < Gruppen.length; i++)
     {
         var gruppe = Gruppen[i];
-        markup += "<li><a href='#voegel?gruppe=" + gruppe  + "'>" + gruppe + "</a></li>";
+        markup += "<li><a href='#voegel?gruppe=" + gruppe  + "' data-transition='slide'>" + gruppe + "</a></li>";
     }
     markup += "</ul>";
 
@@ -134,7 +138,7 @@ $(document).ready(function()
     for (i = 0; i < Lebensraeume.length; i++)
     {
         var lebensraum = Lebensraeume[i];
-        markup += "<li><a href='#voegel?gebiet=" + lebensraum + "'>" + lebensraum + "</a></li>";
+        markup += "<li><a href='#voegel?gebiet=" + lebensraum + "' data-transition='slide'>" + lebensraum + "</a></li>";
     }
     markup += "</ul>";
 
@@ -216,12 +220,18 @@ $(document).ready(function()
         </div>
         
         <div data-role="content">
-            <table style="width: 100%">
-                <tr><td colspan="2"><h3 id="detailName"></h3><img id="detailBild" style="width: 100%"/></td></tr>
-                <tr><td style="font-weight: bold">Gruppe</td><td id="detailGruppe"></td></tr>
-                <tr><td style="font-weight: bold">Lebensraum</td><td id="detailLebensraum"></td></tr>
-                <tr><td style="font-weight: bold">Länge(cm)</td><td id="detailLaenge"></td></tr>
-            </table>
+            <div class="ui-grid-solo">
+        	    <div class="ui-block-a"><img id="detailBild" alt="" style="width: 100%"/></div>
+            </div>
+
+            <div class="ui-grid-a">
+	            <div class="ui-block-a">Gruppe</div>
+	            <div class="ui-block-b" id="detailGruppe"></div>	   
+	            <div class="ui-block-a">Lebensraum</div>
+	            <div class="ui-block-b" id="detailLebensraum"></div>	   
+	            <div class="ui-block-a">Länge(cm)</div>
+	            <div class="ui-block-b" id="detailLaenge"></div>	   
+            </div>
         </div>
 
         <div data-role="footer" data-position="fixed">
