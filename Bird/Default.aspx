@@ -13,6 +13,19 @@
     <!-- <link rel="apple-touch-startup-image" href="startup.png" /> -->
     <link href="Content/jquery.mobile-1.1.0.min.css" rel="stylesheet" type="text/css" />
 
+    <style type="text/css">
+.ui-li-thumb, .ui-li-icon
+{
+    max-height: 40px; 
+}
+
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-has-thumb.ui-li-static
+{
+	padding-left: 80px;
+	min-height: 0px;
+}
+    </style>
+
     <script src="Scripts/jquery-1.6.4.min.js" type="text/javascript"></script>
     <script src="Scripts/jquery.mobile-1.1.0.min.js" type="text/javascript"></script>
     <script src="Scripts/data.js" type="text/javascript"></script>
@@ -50,7 +63,8 @@ function showVoegel(urlObj, options)
     for (var i = 0; i < items.length; i++)
     {
         var item = items[i];
-        markup += "<li><a href='#vogel?name=" + item.Name + "' data-transition='slide'>" + item.Name + "</a></li>";
+        var bild = item.Bilder[0];
+        markup += "<li><a href='#vogel?name=" + item.Name + "' data-transition='slide'><img src='Assets/thumbs/" + bild.Source + "' alt='" + bild.Titel + "'/>" + item.Name + "</a></li>";
     }
     markup += "</ul>";
 
@@ -81,7 +95,7 @@ function showVogel(urlObj, options)
     $header.find("h1").html(item.Name);
 
     var $content = $page.children(":jqmData(role=content)");    
-    $content.find('img[id="detailBild"]').attr("src", "Assets/" + item.Bilder[0].Source);
+    $content.find('img[id="detailBild"]').attr("src", "Assets/images/" + item.Bilder[0].Source);
     $content.find('div[id="detailGruppe"]').html(item.Gruppe);
     $content.find('div[id="detailLebensraum"]').html(item.Lebensraum);
     $content.find('div[id="detailLaenge"]').html(item.Laenge);

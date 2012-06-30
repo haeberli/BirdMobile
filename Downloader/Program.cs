@@ -62,8 +62,8 @@ namespace Downloader
 					{
 						Console.WriteLine(bild.Source);
 
-						string strFile = IMAGES_FOLDER + "/" + Path.GetFileName(bild.Source);
-						client.DownloadFile(bild.Source, strFile);
+						string strFile =  Path.GetFileName(bild.Source);
+						client.DownloadFile(bild.Source, IMAGES_FOLDER + "/" + strFile);
 						bild.Source = strFile;
 					}
 				}
