@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-    <!-- <link rel="apple-touch-icon" href="iphon_tetris_icon.png"/> -->
+    <!-- <link rel="apple-touch-icon" href="icon.png"/> -->
     <!-- <link rel="apple-touch-startup-image" href="startup.png" /> -->
     <link href="Content/jquery.mobile-1.1.0.min.css" rel="stylesheet" type="text/css" />
 
